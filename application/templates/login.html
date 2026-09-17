@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Login — AG Insurance QA Lab{% endblock %}
+{% block content %}
+<h1 id="login-title">Login</h1>
+{% if error %}<p id="login-error" class="error">{{ error }}</p>{% endif %}
+<form id="login-form" method="post" action="{{ url_for('login') }}">
+  <label for="login-username">Username</label>
+  <input id="login-username" name="username" type="text" autofocus>
+  <label for="login-password">Password</label>
+  <input id="login-password" name="password" type="password">
+  <p><button id="login-submit-btn" type="submit">Log in</button></p>
+</form>
+{% endblock %}

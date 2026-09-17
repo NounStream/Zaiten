@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Dashboard — AG Insurance QA Lab{% endblock %}
+{% block content %}
+<h1 id="dashboard-title">Dashboard</h1>
+<p id="dashboard-welcome">Welcome, {{ username }} ({{ role }}).</p>
+<h2>Policies by status</h2>
+<ul id="dashboard-status-list">
+  {% for status in ['PENDING', 'ACTIVE', 'EXPIRED', 'CANCELLED'] %}
+  <li id="dashboard-count-{{ status|lower }}">{{ status }}: {{ counts.get(status, 0) }}</li>
+  {% endfor %}
+</ul>
+{% endblock %}

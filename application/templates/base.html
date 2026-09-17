@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}AG Insurance QA Lab{% endblock %}</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 2rem auto; max-width: 40rem; color: #222; }
+    label { display: block; margin-top: .75rem; }
+    input, select, button { font: inherit; padding: .35rem .5rem; margin-top: .25rem; }
+    .error { color: #b00020; font-weight: 600; }
+    nav { display: flex; gap: 1rem; align-items: center; border-bottom: 1px solid #ccc; padding-bottom: .5rem; margin-bottom: 1rem; }
+  </style>
+</head>
+<body>
+  {% if session.get('user_id') %}
+  <nav>
+    <span id="nav-user">{{ session['username'] }} ({{ session['role'] }})</span>
+    <a id="nav-dashboard" href="{{ url_for('dashboard') }}">Dashboard</a>
+    <form id="logout-form" method="post" action="{{ url_for('logout') }}">
+      <button id="nav-logout-btn" type="submit">Log out</button>
+    </form>
+  </nav>
+  {% endif %}
+  {% block content %}{% endblock %}
+</body>
+</html>

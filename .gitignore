@@ -1,0 +1,22 @@
+# Python bytecode — regenerated, never committed
+__pycache__/
+*.pyc
+
+# Virtual environments — machine-specific
+.venv/
+venv/
+
+# Generated test databases — recreated by seed scripts (test isolation practice)
+*.sqlite3
+*.db
+
+# Node dependencies (Playwright)
+node_modules/
+
+# Raw run output — curated evidence is committed under evidence/ instead
+test-results/
+playwright-report/
+*.log
+
+# Local configuration that could hold secrets — never committed
+.env
